@@ -11,6 +11,8 @@
 |Gray silty mudstone 灰色粉砂质泥岩 |3|13|11\*3|2|
 |Light grey fine sandstone 浅灰色细砂岩|4|29|27\*1|2|
 
-## training
+
+
+
 
 

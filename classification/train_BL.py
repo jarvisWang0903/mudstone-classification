@@ -27,18 +27,15 @@ def train_baseline(model_dict, trainloader_iter, cfg):
 
     model = model_dict['model']
 
-    # SEGMNETATION NETWORK
+    #  NETWORK
     model.train()
     model.to(device)
 
     cudnn.benchmark = True
     cudnn.enabled = True
 
-    # DISCRIMINATOR NETWORK
-
 
     # OPTIMIZERS
-    # segnet's optimizer
     model_optim = optim.SGD(model.optim_parameters(cfg.TRAIN.LEARNING_RATE),
                                      lr=cfg.TRAIN.LEARNING_RATE,
                                      momentum=cfg.TRAIN.MOMENTUM,
@@ -54,7 +51,7 @@ def train_baseline(model_dict, trainloader_iter, cfg):
         # adapt LR if needed
         adjust_learning_rate(model_optim, i_iter, cfg)
 
-        # train on source
+        # get data
         _, batch = trainloader_iter.__next__()
         images, labels, name = batch
 
@@ -63,11 +60,12 @@ def train_baseline(model_dict, trainloader_iter, cfg):
 
         model_optim.step()
 
-        current_losses = {'seg_s': loss
-                          }
+        current_losses = {'seg_s': loss}
 
         print_losses(current_losses, cfg, i_iter)
 
+
+        # 存储模型
         if i_iter % cfg.TRAIN.SAVE_PRED_EVERY == 0 and i_iter != 0:
             print('taking snapshot ...')
             print('exp =', cfg.EXP_ROOT_SNAPSHOT)

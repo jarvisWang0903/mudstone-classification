@@ -1,5 +1,6 @@
 MODEL: RESNET
 visGPU:  '3'
+SET: 'val'
 
 
 TEST:

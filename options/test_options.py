@@ -13,7 +13,7 @@ cfg.MODEL = ''
 cfg.INFO_TARGET = str(project_root / 'bl/data/data_list/seqs_02_list/info.json')
 cfg.RESTORE_FROM = None
 cfg.visGPU = ''
-
+cfg.SET = 'val'
 
 cfg.TEST = EasyDict()
 

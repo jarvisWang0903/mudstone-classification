@@ -40,7 +40,7 @@ def main():
     if cfg.EXP_NAME == '':
         cfg.EXP_NAME = f'exp_1'
 
-
+    # 创建实验文件夹
     if cfg.EXP_ROOT_SNAPSHOT == '':
         cfg.EXP_ROOT_SNAPSHOT = osp.join(cfg.EXP_ROOT, 'snapshots')
     if cfg.EXP_ROOT_LOGS == '':
@@ -70,7 +70,7 @@ def main():
 
     model_dict = {}
 
-    # LOAD SEGMENTATION NET
+    # LOAD  NET
     assert osp.exists(cfg.INIT_FROM), f'Missing init model {cfg.INIT_FROM}'
     if cfg.TRAIN.MODEL == 'RESNET':
         if cfg.METHOD == 'baseline':
@@ -86,6 +86,7 @@ def main():
         raise NotImplementedError(f"Not yet supported {cfg.TRAIN.MODEL}")
     print('Model loaded')
 
+
     if cfg.RESTOR_FROM != '':
         state_dict = torch.load(cfg.RESTOR_FROM, map_location=lambda storage, loc: storage)
         if cfg.METHOD == 'baseline':
@@ -93,7 +94,7 @@ def main():
             print(f'model restore from {cfg.RESTOR_FROM}')
         else:
             raise NotImplementedError
-
+    # DATA LOADER
     print('preparing dataloaders ...')
     dataloader = CreateDataLoader(cfg)
     dataloader_iter = enumerate(dataloader)
@@ -101,7 +102,7 @@ def main():
     with open(osp.join(cfg.EXP_ROOT_LOGS, 'train_cfg.yml'), 'w') as yaml_file:
         yaml.dump(cfg, yaml_file, default_flow_style=False)
 
-    # UDA TRAINING
+    # TRAINING
     if cfg.METHOD == 'baseline':
         train_baseline(model_dict, dataloader_iter, cfg)
 
