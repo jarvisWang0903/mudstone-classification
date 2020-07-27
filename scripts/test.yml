@@ -1,0 +1,10 @@
+MODEL: RESNET
+visGPU:  '3'
+
+
+TEST:
+  START_ITER: 2000
+  MAX_ITERS:  150000
+  INPUT_SIZE: [512, 256]
+
+  MODEL_DIR: ..../experiment/baseline/snapshots/

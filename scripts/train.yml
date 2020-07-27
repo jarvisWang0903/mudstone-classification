@@ -1,0 +1,20 @@
+METHOD: baseline
+EXP_ROOT: '...experiment/baseline'
+SET: 'train'
+ROOT: '/opt/data-set/public/ycwang/'
+#
+
+NUM_WORKERS: 4
+INIT_FROM: ../DeepLab_resnet_pretrained_init-f81d91e8.pth
+
+RESTOR_FROM: ''#Return to training
+
+visGPU:  '0'
+
+TRAIN:
+  MODEL: resnet
+  BATCH_SIZE: 8
+  MAX_ITERS: 250000
+  EARLY_STOP: 150000
+  LEARNING_RATE: 2.5e-4
+

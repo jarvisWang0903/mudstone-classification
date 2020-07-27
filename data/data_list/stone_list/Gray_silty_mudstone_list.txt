@@ -1,0 +1,13 @@
+img/Gray_silty_mudstone/2068.00.webp 3
+img/Gray_silty_mudstone/2104.00.webp 3
+img/Gray_silty_mudstone/2139.00.webp 3
+img/Gray_silty_mudstone/2140.00.webp 3
+img/Gray_silty_mudstone/2145.00.webp 3
+img/Gray_silty_mudstone/2146.00.webp 3
+img/Gray_silty_mudstone/2400.00.webp 3
+img/Gray_silty_mudstone/2401.00.webp 3
+img/Gray_silty_mudstone/2476.00.webp 3
+img/Gray_silty_mudstone/2567.00.webp 3
+img/Gray_silty_mudstone/2601.00.webp 3
+img/Gray_silty_mudstone/2618.00.webp 3
+img/Gray_silty_mudstone/2623.00.webp 3

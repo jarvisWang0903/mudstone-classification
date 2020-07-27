@@ -1,0 +1,8 @@
+img/Dark_grey_silty_mudstone/2532.00.webp 1
+img/Dark_grey_silty_mudstone/2547.00.webp 1
+img/Dark_grey_silty_mudstone/2548.00.webp 1
+img/Dark_grey_silty_mudstone/2627.00.webp 1
+img/Dark_grey_silty_mudstone/2603.00.webp 1
+img/Dark_grey_silty_mudstone/2628.00.webp 1
+img/Dark_grey_silty_mudstone/2629.00.webp 1
+img/Dark_grey_silty_mudstone/2630.00.webp 1
