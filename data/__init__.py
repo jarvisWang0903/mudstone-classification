@@ -13,12 +13,12 @@ def CreateDataLoader(cfg, set='train'):
     input_transform = Compose([RandomSized_and_Crop(cfg.TRAIN.INPUT_SIZE)])
 
     if cfg.SET == 'train':
-        dataset = MUDSTONE_Dataset(cfg.ROOT, img_list_path='./data_list/stone_list/train_list_shuffle.txt',
+        dataset = MUDSTONE_Dataset(cfg.ROOT, img_list_path='./data_list/stone_list/train_list_shuffle_new.txt',
                                    max_iters=cfg.TRAIN.MAX_ITERS * cfg.TRAIN.BATCH_SIZE, transform=input_transform)
         dataloader = data.DataLoader(dataset, batch_size=cfg.TRAIN.BATCH_SIZE, shuffle=True,
                                             num_workers=cfg.NUM_WORKERS, pin_memory=True)
     elif cfg.SET == 'val':
-        dataset = MUDSTONE_Dataset(cfg.ROOT, img_list_path='./data_list/stone_list/val_list.txt',
+        dataset = MUDSTONE_Dataset(cfg.ROOT, img_list_path='./data_list/stone_list/val_list_new.txt',
                                    max_iters=None, transform=None)
         dataloader = data.DataLoader(dataset, batch_size=1, shuffle=False,
                                      num_workers=cfg.NUM_WORKERS, pin_memory=True)
